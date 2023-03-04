@@ -50,10 +50,15 @@ export default function App() {
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.cardAnimal}>
-          <Text>{text}</Text>
+          <Text style={styles.cardText}>{text}</Text>
           <Image style={styles.cardImage} source={{ uri: `${image}` }}/>
-          <TouchableOpacity style={{...styles.button}}>
-            <Button title="Next Fact" onPress={getAnimal} color="#5500BE" />
+          <TouchableOpacity onPress={getAnimal} style={{...styles.button}}>
+            <Text style ={{
+              ...styles.buttonText,
+              color:"white"
+            }} >
+              Next Fact
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -78,10 +83,14 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#D6D6D6",
   },
+  cardText:{
+    fontWeight:"bold"
+  },
   cardImage: {
     width: 203,
     height: 200,
     marginBottom: 10,
+    marginTop:10,
     borderRadius: 4,
   },
   button: {
@@ -91,4 +100,7 @@ const styles = StyleSheet.create({
     backgroundColor:"#5500BE",
     width:"100%"
   },
+  buttonText:{
+    textAlign:"center"
+  }
 });
